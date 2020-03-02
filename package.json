@@ -1,0 +1,26 @@
+{
+  "name": "employeedirectory",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "start-dev": "nodemon server.js & npm run start-client",
+    "start-client": "cd client && npm start",
+    "heroku-postbuild": "cd client && npm install && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarciaAdler/EmployeeDirectory.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarciaAdler/EmployeeDirectory/issues"
+  },
+  "homepage": "https://github.com/MarciaAdler/EmployeeDirectory#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
