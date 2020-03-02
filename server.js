@@ -13,37 +13,44 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/directory", {
 
 const employees = [
   {
-    name: "Cher Morabito",
+    firstName: "Cher",
+    lastName: "Morabito",
     role: "Senior Producer",
     department: "Events"
   },
   {
-    name: "Michael Bito",
+    firstName: "Michael",
+    lastName: "Bito",
     role: "Managing Director",
     department: "Finance"
   },
   {
-    name: "Layla Grace",
+    firstName: "Layla",
+    lastName: "Grace",
     role: "Operations Analyst",
     department: "Operations"
   },
   {
-    name: "Noah James",
+    firstName: "Noah",
+    lastName: "James",
     role: "Software Engineer",
     department: "IT"
   },
   {
-    name: "Jeffrey Adler",
+    firstName: "Jeffrey",
+    lastName: "Adler",
     role: "Senior Manager",
     department: "Human Resources"
   },
   {
-    name: "Lily Daly",
+    firstName: "Lily",
+    lastName: "Daly",
     role: "Associate",
     department: "Human Resources"
   },
   {
-    name: "Calvin Jones",
+    firstName: "Calvin",
+    lastName: "Jones",
     role: "Associate Producer",
     department: "Events"
   }

@@ -20,3 +20,13 @@ The user should be able to:
 
 <li>Filter the users by at least one property.</li>
 </ul>
+
+## Technologies used
+
+Technologies that are used in this app include:
+
+<ul>
+<li>React</li>
+<li>JavaScript</li>
+<li>CSS</li>
+<li>MongoDB</li>
