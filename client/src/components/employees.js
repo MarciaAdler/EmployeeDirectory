@@ -23,28 +23,25 @@ class Employees extends React.Component {
       .then(res => res.json())
       .then(result => {
         console.log(result);
-        this.setState(
-          {
-            employees: result
-          },
-          this.populateTable
-        );
+        this.setState({
+          employees: result
+        });
       });
   }
-  //   populateTable() {
-  //     this.state.employees.map(employee => {
-  //       console.log(employee);
-  //       return (
-  //         <tr>
-  //           <th scope="row"></th>
-  //           <td>{employee.firstName}</td>
-  //           <td>{employee.lastName}</td>
-  //           <td>{employee.role}</td>
-  //           <td>{employee.department}</td>
-  //         </tr>
-  //       );
-  //     });
-  //   }
+  populateTable() {
+    return this.state.employees.map((employee, index) => {
+      console.log(employee);
+      return (
+        <tr key={index}>
+          <th scope="row">{index + 1}</th>
+          <td>{employee.firstName}</td>
+          <td>{employee.lastName}</td>
+          <td>{employee.role}</td>
+          <td>{employee.department}</td>
+        </tr>
+      );
+    });
+  }
   render() {
     return (
       <div className="container">
@@ -59,7 +56,8 @@ class Employees extends React.Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.employees.map((employee, index) => {
+            {this.populateTable()}
+            {/* {this.state.employees.map((employee, index) => {
               console.log(employee);
               return (
                 <tr>
@@ -70,7 +68,7 @@ class Employees extends React.Component {
                   <td>{employee.department}</td>
                 </tr>
               );
-            })}
+            })} */}
           </tbody>
         </table>
       </div>
