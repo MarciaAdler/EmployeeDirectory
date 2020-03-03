@@ -1,40 +1,81 @@
 import React from "react";
-
-function Employees() {
-  return (
-    <div className="container">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  );
+//   populateTable() {
+//     this.state.employees.map((employee, index) => {
+//       console.log(employee);
+//       return (
+//         <tr>
+//           <th scope="row"></th>
+//           <td>{employee.firstName}</td>
+//           <td>{employee.lastName}</td>
+//           <td>{employee.role}</td>
+//           <td>{employee.department}</td>
+//         </tr>
+//       );
+//     });
+//   }
+class Employees extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { employees: [] };
+  }
+  componentDidMount() {
+    fetch("/employees")
+      .then(res => res.json())
+      .then(result => {
+        console.log(result);
+        this.setState(
+          {
+            employees: result
+          },
+          this.populateTable
+        );
+      });
+  }
+  //   populateTable() {
+  //     this.state.employees.map(employee => {
+  //       console.log(employee);
+  //       return (
+  //         <tr>
+  //           <th scope="row"></th>
+  //           <td>{employee.firstName}</td>
+  //           <td>{employee.lastName}</td>
+  //           <td>{employee.role}</td>
+  //           <td>{employee.department}</td>
+  //         </tr>
+  //       );
+  //     });
+  //   }
+  render() {
+    return (
+      <div className="container">
+        <table className="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Role</th>
+              <th scope="col">Department</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.state.employees.map((employee, index) => {
+              console.log(employee);
+              return (
+                <tr>
+                  <th scope="row">{index + 1}</th>
+                  <td>{employee.firstName}</td>
+                  <td>{employee.lastName}</td>
+                  <td>{employee.role}</td>
+                  <td>{employee.department}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    );
+  }
 }
 
 export default Employees;
