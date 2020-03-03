@@ -9,8 +9,8 @@ app.use(express.static("client/build"));
 const Employee = require("./client/public/employeeModel.js");
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/directory", {
-  useNewUrlParser: true,
-  useFindAndModify: false
+  useNewUrlParser: true
+  //useFindAndModify: false
 });
 
 app.get("/employees", (req, res) => {
