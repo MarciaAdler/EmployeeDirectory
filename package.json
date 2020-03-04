@@ -24,7 +24,6 @@
   },
   "homepage": "https://github.com/MarciaAdler/EmployeeDirectory#readme",
   "dependencies": {
-    "babel-plugin-transform-async-to-generator": "^6.24.1",
     "express": "^4.17.1",
     "mongoose": "^5.9.3"
   }
