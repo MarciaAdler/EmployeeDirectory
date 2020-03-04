@@ -43,43 +43,43 @@ const data = [
     firstName: "Cher",
     lastName: "Morabito",
     role: "Senior Producer",
-    department: "Events"
+    department: "events"
   },
   {
     firstName: "Michael",
     lastName: "Bito",
     role: "Managing Director",
-    department: "Finance"
+    department: "finance"
   },
   {
     firstName: "Layla",
     lastName: "Grace",
     role: "Operations Analyst",
-    department: "Operations"
+    department: "operations"
   },
   {
     firstName: "Noah",
     lastName: "James",
     role: "Software Engineer",
-    department: "IT"
+    department: "engineering"
   },
   {
     firstName: "Jeffrey",
     lastName: "Adler",
     role: "Senior Manager",
-    department: "Human Resources"
+    department: "human resources"
   },
   {
     firstName: "Lily",
     lastName: "Daly",
     role: "Associate",
-    department: "Human Resources"
+    department: "human resources"
   },
   {
     firstName: "Calvin",
     lastName: "Jones",
     role: "Associate Producer",
-    department: "Events"
+    department: "events"
   }
 ];
 Employee.create(data)

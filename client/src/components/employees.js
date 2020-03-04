@@ -62,6 +62,7 @@ class Employees extends React.Component {
   }
 
   filter = department => {
+    department = department.toLowerCase();
     fetch("/employees/department/" + department)
       .then(res => res.json())
       .then(result => {
@@ -91,14 +92,14 @@ class Employees extends React.Component {
                 <SortBtn col={"role"} sort={this.sort} />
               </th>
               <th scope="col">
-                Department
-                <SortBtn col={"department"} sort={this.sort} />
                 <Filter
                   department={this.state.department}
                   filter={this.filter}
                   handleChange={this.handleChange}
                   handleSubmit={this.handleSubmit}
                 />
+                Department
+                <SortBtn col={"department"} sort={this.sort} />
               </th>
             </tr>
           </thead>
