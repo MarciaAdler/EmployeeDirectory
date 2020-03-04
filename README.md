@@ -30,3 +30,15 @@ Technologies that are used in this app include:
 <li>JavaScript</li>
 <li>CSS</li>
 <li>MongoDB</li>
+<li>Bootstrap</li>
+</ul>
+
+## Getting Started
+
+<ul>
+<li>To get started clone the github repo, and once opened run npm install to install the required packages.  Be sure to run it both on the server side and client side.</li>
+
+<li>Once the npm packages are installed you can run the code on your local server.  You can open the server in your terminal and type npm run start-dev to launch the application.</li>
+
+<li>The database on Heroku is seeded by an array of objects in the server.  The database clears and repopulates on each load.</li>
+</ul>
