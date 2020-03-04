@@ -1,7 +1,7 @@
 import React from "react";
 import SortBtn from "./SortBtn";
 import Filter from "./Filter";
-
+import Reset from "./ResetBtn";
 class Employees extends React.Component {
   constructor(props) {
     super(props);
@@ -56,9 +56,12 @@ class Employees extends React.Component {
   }
 
   handleSubmit(event) {
+    event.preventDefault();
     alert("A department was submitted: " + this.state.department);
     this.filter(this.state.department);
-    event.preventDefault();
+    this.setState({
+      department: ""
+    });
   }
 
   filter = department => {
@@ -72,11 +75,16 @@ class Employees extends React.Component {
       });
   };
 
+  reset() {
+    window.location.reload(false);
+  }
+
   render() {
     return (
       <div className="container">
         <table className="table table-striped">
           <thead>
+            <Reset reset={this.reset} />
             <tr>
               <th scope="col">#</th>
               <th scope="col">
