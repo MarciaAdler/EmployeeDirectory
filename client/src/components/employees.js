@@ -47,29 +47,29 @@ class Employees extends React.Component {
       });
   };
 
-  // handleChange(event) {
-  //   const { name, value } = event.target;
+  handleChange(event) {
+    const { name, value } = event.target;
 
-  //   this.setState({
-  //     [name]: value
-  //   });
-  // }
+    this.setState({
+      [name]: value
+    });
+  }
 
-  // handleSubmit(event) {
-  //   alert("A department was submitted: " + this.state.department);
-  //   this.filter(this.state.department);
-  //   event.preventDefault();
-  // }
+  handleSubmit(event) {
+    alert("A department was submitted: " + this.state.department);
+    this.filter(this.state.department);
+    event.preventDefault();
+  }
 
-  // filter = department => {
-  //   fetch("/employees/department/" + department)
-  //     .then(res => res.json())
-  //     .then(result => {
-  //       this.setState({
-  //         employees: result
-  //       });
-  //     });
-  // };
+  filter = department => {
+    fetch("/employees/department/" + department)
+      .then(res => res.json())
+      .then(result => {
+        this.setState({
+          employees: result
+        });
+      });
+  };
 
   render() {
     return (
