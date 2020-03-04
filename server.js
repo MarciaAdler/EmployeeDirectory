@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 4000;
 
 app.use(express.static("client/build"));
 
-const Employee = require("./client/public/employeeModel.js");
+const Employee = require("./employeeModel.js");
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/directory", {
   useNewUrlParser: true
@@ -17,6 +17,20 @@ app.get("/employees", (req, res) => {
   Employee.find().then(employees => {
     res.json(employees);
   });
+});
+
+app.get("/employees/department/:department", async (req, res) => {
+  console.log(req.params.department);
+  const employees = await Employee.find({ department: req.params.department });
+  console.log("employees", employees);
+  res.json(employees);
+});
+
+app.get("/employees/col/:col", async (req, res) => {
+  const sortQuery = {};
+  sortQuery[req.params.col] = 1;
+  const employees = await Employee.find().sort(sortQuery);
+  res.json(employees);
 });
 Employee.deleteMany({}, function(err) {
   if (err) {
