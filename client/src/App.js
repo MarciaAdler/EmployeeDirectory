@@ -1,5 +1,5 @@
 import React from "react";
-import Employees from "./Employees";
+import Employees from "./components/Employees";
 
 import "./App.css";
 
