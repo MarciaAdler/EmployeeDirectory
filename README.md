@@ -40,5 +40,12 @@ Technologies that are used in this app include:
 
 <li>Once the npm packages are installed you can run the code on your local server.  You can open the server in your terminal and type npm run start-dev to launch the application.</li>
 
-<li>The database on Heroku is seeded by an array of objects in the server.  The database clears and repopulates on each load.</li>
 </ul>
+
+## Live App
+
+The live app can be viewed at: https://radiant-crag-89661.herokuapp.com/
+
+## Screenshot
+
+![Employee Directory](EmployeeDirectoryScreenshot.png)
