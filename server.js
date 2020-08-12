@@ -8,13 +8,13 @@ app.use(express.static("client/build"));
 
 const Employee = require("./employeeModel.js");
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/directory", {
-  useNewUrlParser: true
+mongoose.connect(process.env.DB_URI || "mongodb://localhost/directory", {
+  useNewUrlParser: true,
   //useFindAndModify: false
 });
 
 app.get("/employees", (req, res) => {
-  Employee.find().then(employees => {
+  Employee.find().then((employees) => {
     res.json(employees);
   });
 });
@@ -32,7 +32,7 @@ app.get("/employees/col/:col", async (req, res) => {
   const employees = await Employee.find().sort(sortQuery);
   res.json(employees);
 });
-Employee.deleteMany({}, function(err) {
+Employee.deleteMany({}, function (err) {
   if (err) {
     console.log(err);
   }
@@ -43,47 +43,47 @@ const data = [
     firstName: "Cher",
     lastName: "Morabito",
     role: "Senior Producer",
-    department: "events"
+    department: "events",
   },
   {
     firstName: "Michael",
     lastName: "Bito",
     role: "Managing Director",
-    department: "finance"
+    department: "finance",
   },
   {
     firstName: "Layla",
     lastName: "Grace",
     role: "Operations Analyst",
-    department: "operations"
+    department: "operations",
   },
   {
     firstName: "Noah",
     lastName: "James",
     role: "Software Engineer",
-    department: "engineering"
+    department: "engineering",
   },
   {
     firstName: "Jeffrey",
     lastName: "Adler",
     role: "Senior Manager",
-    department: "human resources"
+    department: "human resources",
   },
   {
     firstName: "Lily",
     lastName: "Daly",
     role: "Associate",
-    department: "human resources"
+    department: "human resources",
   },
   {
     firstName: "Calvin",
     lastName: "Jones",
     role: "Associate Producer",
-    department: "events"
-  }
+    department: "events",
+  },
 ];
 Employee.create(data)
-  .then(dbEmployee => {
+  .then((dbEmployee) => {
     console.log(dbEmployee);
   })
   .catch(({ message }) => {
